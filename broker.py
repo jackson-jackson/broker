@@ -4,7 +4,7 @@ while True:
     print('\nBuy ETH or BTC?')
     currency = input()
 
-    # get live market data
+    # get live market data from coinmarketcap.com
     if currency == 'eth' or currency == 'ETH':
         main_api = 'https://api.coinmarketcap.com/v1/ticker/ethereum/?convert=CAD'
         json_data = requests.get(main_api).json()
