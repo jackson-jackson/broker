@@ -46,9 +46,9 @@ while True:
         json_price_cad = btc['price_cad']
 
     # gather more details about the transaction
-    print('\nHow much would you like to buy?')
+    print('\nHow much would they like to buy?')
     amount = input()
-    print("\nWhat's your fee? (in %)")
+    print("\nWhat's your fee? (Integers only (i.e., 2, 5, 10))")
     raw_fee = input()
     fee = float(raw_fee) / 100 + 1
 
