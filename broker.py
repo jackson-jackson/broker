@@ -34,12 +34,12 @@ while True:
     currency = input()
 
     # get live market data from coinmarketcap.com
-    if currency == 'eth' or currency == 'ETH':
+    if currency in('eth', 'ETH'):
         main_api = 'https://api.coinmarketcap.com/v1/ticker/ethereum/?convert=CAD'
         json_data = requests.get(main_api).json()
         btc = json_data[0]
         json_price_cad = btc['price_cad']
-    if currency == 'btc' or currency == 'BTC':
+    if currency in ('btc', 'BTC'):
         main_api = 'https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=CAD'
         json_data = requests.get(main_api).json()
         btc = json_data[0]
@@ -48,7 +48,7 @@ while True:
     # gather more details about the transaction
     print('\nHow much would they like to buy?')
     amount = input()
-    print("\nWhat's your fee? (Integers only (i.e., 2, 5, 10))")
+    print("\nWhat's your fee?)")
     raw_fee = input()
     fee = float(raw_fee) / 100 + 1
 
