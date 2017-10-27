@@ -25,6 +25,14 @@ def database():
     conn.close()
 
 
+def get_price(coin):
+    url = 'https://api.coinmarketcap.com/v1/ticker/{}/?convert=CAD'.format(coin)
+    json_data = requests.get(url).json()
+    btc = json_data[0]
+    json_price_cad = btc['price_cad']
+    return json_price_cad
+
+
 while True:
     # gather details of details of transaction
     print('\nWho is the buyer?')
@@ -35,20 +43,14 @@ while True:
 
     # get live market data from coinmarketcap.com
     if currency in('eth', 'ETH'):
-        main_api = 'https://api.coinmarketcap.com/v1/ticker/ethereum/?convert=CAD'
-        json_data = requests.get(main_api).json()
-        btc = json_data[0]
-        json_price_cad = btc['price_cad']
+        json_price_cad = get_price('ethereum')
     if currency in ('btc', 'BTC'):
-        main_api = 'https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=CAD'
-        json_data = requests.get(main_api).json()
-        btc = json_data[0]
-        json_price_cad = btc['price_cad']
+        json_price_cad = get_price('bitcoin')
 
     # gather more details about the transaction
     print('\nHow much would they like to buy?')
     amount = input()
-    print("\nWhat's your fee?)")
+    print("\nWhat's your fee?")
     raw_fee = input()
     fee = float(raw_fee) / 100 + 1
 
