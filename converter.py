@@ -26,10 +26,8 @@ while True:
     total_currency2 = float(amount) / float(currency2_price)
     total_currency1 = float(amount) / float(currency1_price)
 
-# you need approximately x neo to buy x eth
     print('\nYou need {:0.5f} '.format(total_currency1) + currency1 + ' to buy {:0.5f} '.format(total_currency2) + currency2)
 
-    # ask to repeat
     print('\nGet new quote? [y/N]')
     answer = input()
     if answer in ('n', 'N'):
