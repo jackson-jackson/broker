@@ -59,7 +59,7 @@ while True:
 
     # print quote
     print('\n::::::::::::::: YOUR QUOTE :::::::::::::::\n')
-    price_currency = 'Price per ' + currency + ' (in CAD) = ${:0.2f}'. format(cad_price_after_fee)
+    price_currency = 'Price per ' + currency + ' (in CAD) = ${:0.2f}'.format(cad_price_after_fee)
     print(price_currency)
     total_currency = float(amount) / float(cad_price_after_fee)
     you_receive = 'You receive {:0.5f} '.format(
