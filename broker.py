@@ -67,13 +67,13 @@ while True:
     print(you_receive)
     print('\n::::::::::::::: YOUR QUOTE :::::::::::::::\n')
 
-    print('Save transaction details to database? y/n')
+    print('Save transaction details to database? [y/N]')
     save_to_db = input()
     if save_to_db in ('y', 'Y'):
         database()
 
     # ask to repeat
-    print('\nGet new quote? y/n')
+    print('\nGet new quote? [y/N]')
     answer = input()
     if answer in ('n', 'N'):
         exit()
