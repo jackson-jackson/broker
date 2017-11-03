@@ -18,6 +18,8 @@ while True:
     # get live market data from coinmarketcap.com
     if currency1 in ('neo', 'NEO'):
         currency1_price = get_price('neo')
+    if currency1 in ('omg', 'OMG'):
+        currency1_price = get_price('omisego')
     if currency2 in('eth', 'ETH'):
         currency2_price = get_price('ethereum')
     if currency2 in ('btc', 'BTC'):
