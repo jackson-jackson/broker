@@ -42,7 +42,7 @@ while True:
     currency = input()
 
     # get live market data from coinmarketcap.com
-    if currency in('eth', 'ETH'):
+    if currency in ('eth', 'ETH'):
         json_price_cad = get_price('ethereum')
     if currency in ('btc', 'BTC'):
         json_price_cad = get_price('bitcoin')
@@ -69,11 +69,11 @@ while True:
 
     print('Save transaction details to database? y/n')
     save_to_db = input()
-    if save_to_db == 'y':
+    if save_to_db in ('y', 'Y'):
         database()
 
     # ask to repeat
     print('\nGet new quote? y/n')
     answer = input()
-    if answer == 'n':
+    if answer in ('n', 'N'):
         exit()
