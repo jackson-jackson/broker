@@ -15,7 +15,7 @@ def database():
         c.execute('CREATE TABLE IF NOT EXISTS transactionDetails(datestamp, customer, currency, amount, fee, priceAfterFee, amountOfCrypto)')
 
     def data_entry():
-        c.execute("INSERT INTO transactionDetails (datestamp, customer, currency, amount, fee, priceAfterFee, amountOfCrypto) VALUES (?, ?, ?, ?, ?, ?, ?)",
+        c.execute("INSERT INTO transactionDetails(datestamp, customer, currency, amount, fee, priceAfterFee, amountOfCrypto) VALUES (?, ?, ?, ?, ?, ?, ?)",
                   (datestamp, customer, currency, amount, fee, cad_price_after_fee, total_currency))
         conn.commit()
 
